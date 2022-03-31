@@ -34,6 +34,6 @@ public void process(String texto, String url) {
 ## Tareas
 
  - Pensar en las estructuras de datos necesaria (puede ser necesario usar unas dentro de otras)
- - Implementar los métodos (@commmand).
+ - Implementar los métodos (@command).
  - Eliminar de la indexación un conjunto de palabras, por ejemplo (el, por, y....) ya que no aportan nada.
  - Probar
