@@ -11,21 +11,29 @@ Se tiene un pequeño intérprete de comandos (librería cliche) que permiter.
  - findWord key. Devuelve en caso de existir un listado de las páginas en la que aparece la palabra
  - listPages. lista las páginas indexadas.
 
-Un ejemplo de uso
+Un ejemplo de uso:
 
-![image](https://github.com/pass1enator/DAWSnakeTemplate/blob/master/src/main/resources/resuelto.png?raw=true)
+![image](https://github.com/pass1enator/DAWGoogleTemplate/blob/master/ejemplo.png?raw=true)
 
-Se proporciona al alumno/a la estructura básica del proyecto, en el que se proporcionan clase auxiliares como Size, Coordenada o Direction, otras como Game y Snake, este código simplemente mueve un cuadrado por el tablero sin hacer ninguna comprobación.
+Se proporciona el código que "trocea" las url que a procesar en el metodo :
+```Java
+public void process(String texto, String url) {
 
-A partir de este codigo y del diagrama UML que se proporciona crear las clases necesarias para que:
-   - Aparezca comida en el tablero de forma aleatoria.
-   - Se controle que la serpiente no sale del campo.
-   - La serpiente no puede pasar sobre si misma
-   - Cuando la serpiente coma una fruta, la serpiente crezca.
-   - El cuerpo de la serpiente se mueve siguiendo a la cabeza.
-   - Al salir del campo o "morderse" el juego se ha de parar y esperar a pulsar el espacio para reiniciar.
- 
-El objetivo principal de la práctia es que la clase Snake poseea una estructura de datos dinámica de las que se facilitan en los apuntes (pila, listas o cola) y se modifique para poder cumplir con el enunciado. **NO ES POSIBLE USAR ESTRUCTURAS DINÁMICAS DE JAVA**
+        List<String> lineas = texto.lines().toList();
+        Iterator<String> it = lineas.iterator();
+        while (it.hasNext()) {
+            StringTokenizer st = new StringTokenizer(it.next());
+            String palabra;
+            while (st.hasMoreTokens()) {
+                palabra = st.nextToken();
+                //se van anyadiendo las entradas a la estructura seleccionada
+            }
+        }
+    }
+```
+## Tareas
 
-![image](https://github.com/pass1enator/DAWSnakeTemplate/blob/master/src/main/resources/uml.png?raw=true)
-
+ - Pensar en las estructuras de datos necesaria (puede ser necesario usar unas dentro de otras)
+ - Implementar los métodos (@commmand).
+ - Eliminar de la indexación un conjunto de palabras, por ejemplo (el, por, y....) ya que no aportan nada.
+ - Probar

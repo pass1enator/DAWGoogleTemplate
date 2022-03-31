@@ -34,7 +34,7 @@ public class Principal implements ShellDependent {
 
     }
 
-    public void procesar(String texto, String url) {
+    public void process(String texto, String url) {
 
         List<String> lineas = texto.lines().toList();
         Iterator<String> it = lineas.iterator();
@@ -44,11 +44,8 @@ public class Principal implements ShellDependent {
             while (st.hasMoreTokens()) {
                 palabra = st.nextToken();
                 //se van anyadiendo las entradas a la estructura seleccionada
-
             }
-
         }
-
     }
 
     @Command
@@ -58,7 +55,7 @@ public class Principal implements ShellDependent {
         Connection conn = Jsoup.connect(url);
         Document doc = conn.get();
         String web_text = doc.body().text();
-        this.procesar(web_text, url);
+        this.process(web_text, url);
        }
 
     @Command
